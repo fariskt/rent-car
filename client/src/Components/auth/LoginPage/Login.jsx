@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
 import "./Login.css";
 import { Link, useNavigate } from "react-router-dom";
+import { AppContext } from "../../../contexts/AppContext";
 
 const Login = () => {
-
+  const {dispatch} = useContext(AppContext)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -32,6 +33,7 @@ const Login = () => {
   };
 
   const loginwithgoogle = () => {
+    dispatch({ type: "SET_IS_LOGGED", payload: true });
     window.open("http://localhost:3001/auth/google/callback", "_self");
   };
 
@@ -50,7 +52,6 @@ const Login = () => {
             <hr className="hr-1" />
             <h3> OR</h3>
             <hr className="hr-2" />
-          
           </div>
           <input
             type="email"
@@ -66,7 +67,9 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          {errorMessage && <p style={{ color: "red" , textAlign: 'center'}}>{errorMessage}</p>}
+          {errorMessage && (
+            <p style={{ color: "red", textAlign: "center" }}>{errorMessage}</p>
+          )}
           <button type="submit" className="login-btn">
             Login
           </button>

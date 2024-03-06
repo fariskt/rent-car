@@ -111,7 +111,7 @@ const Navbar = () => {
                       <a href="#" onClick={() => setIsNavOpen(false)}>
                         Edit Profile
                       </a>
-                      <a href="#" onClick={handleLogout}>
+                      <a href="/" onClick={handleLogout}>
                         Logout
                       </a>
                     </div>
