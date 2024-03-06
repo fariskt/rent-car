@@ -1,0 +1,191 @@
+.navbar {
+  background-color: white;
+  height: 70px;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 250px;
+}
+
+.navbar-logo {
+  color: black;
+  font-size: 1.5em;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: 600;
+}
+
+.navbar-logo span {
+  color: rgb(25, 168, 46);
+}
+
+.navbar-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.navbar-toggle i {
+  font-size: 1.5em;
+  color: black;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-links {
+  text-decoration: none;
+  color: black;
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links:hover,
+.nav-item a:hover {
+  color: rgb(31, 167, 70);
+}
+.nav-item a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+  color: inherit;
+  font-size: 1.2rem;
+}
+.nav-item-profile {
+  position: absolute;
+  right: 50px;
+}
+.dropdown-content {
+  position: absolute;
+  width: 150px;
+  background-color: rgb(49, 68, 107);
+  right: 0;
+  height: 150px;
+  margin-top: 45px;
+  display: flex;
+  padding-top: 20px;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  flex-direction: column;
+}
+.dropdown-content a {
+  color: white;
+}
+.dropdown-content a:hover {
+  color: rgb(39, 97, 234);
+}
+.dropbtn {
+  position: absolute;
+  font-size: 1.8rem;
+  border-radius: 50%;
+  width: 40px;
+  right: 10px;
+  height: 40px;
+  top: -5px;
+  padding-top: 5px;
+  border: none;
+  background-color: white;
+  color: rgb(0, 94, 255);
+  cursor: pointer;
+}
+.dropbtn:hover {
+  background-color: rgb(194, 194, 194);
+  transition: 0.2s ease-in;
+}
+.nav-login{
+  background-color: rgb(31, 148, 221);
+  text-align: center;
+  border: none;
+  margin-top: -4px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  padding:0.5rem 1rem;
+}
+.nav-login a{
+  color: white;
+}
+.nav-login:hover{
+  scale: 1.02;
+}
+@media screen and (max-width: 768px) {
+  .navbar {
+    width: 100vw;
+    z-index: 2;
+  }
+  .navbar-container {
+    margin: 20px 10px;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid rgb(226, 226, 226);
+    padding-top: 10px;
+    background-color: rgb(32, 32, 32);
+  }
+
+  .nav-menu.nav-active {
+    display: flex;
+  }
+
+  .nav-item {
+    border-bottom: 1px solid rgb(73 73 73);
+    width: 100%;
+    padding: 10px 30px;
+    color: rgb(195, 195, 195);
+    margin-right: 0;
+  }
+
+  .nav-links {
+    font-size: 1.2rem;
+  }
+
+  .nav-links:hover {
+    color: black;
+  }
+
+  .nav-links-mobile {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .toggle-icon {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-size: 3rem;
+    color: rgb(69, 69, 69);
+  }
+  .nav-login{
+    background-color: rgb(14, 171, 121);
+    margin: 5px;
+    padding:0.4rem 1rem;
+  }
+  .dropbtn {
+    display: none;
+  }
+}

@@ -1,0 +1,118 @@
+.footer{
+    background-color: rgb(28, 28, 33);
+    padding: 0.8rem;
+   
+}
+.footer-header{
+    margin: auto;
+    max-width: 80%;
+    padding-top: 0.5rem;
+}
+.elements{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    text-align: center;
+}
+.elements p{
+    background-color: rgba(76, 77, 78, 0.8) ;
+    cursor: pointer;
+    padding: 0.4rem 0.7rem;
+    border-radius: 8px;
+}
+.footer-container{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+}
+.footer-section h2{
+ color: white;
+}
+.footer-section{
+    display: flex;
+    flex-direction: column;
+    color: rgb(156, 152, 152);
+    padding: 1rem;
+    max-width: 600px;
+    gap: 10px;
+}
+
+.footer-bottom{
+    padding: 1rem;
+}
+.footer-bottom h3{
+    margin: 10px;
+    font-weight: 500;
+    color: rgb(235, 230, 230);
+}
+.footer-bottom h4{
+    margin: 10px;
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(156, 152, 152);
+}
+.copyright{
+    text-align: center;
+    color: rgb(148, 144, 144);
+}
+
+@media (max-width:768px){
+    .footer{
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+    .elements{
+        display: flex;
+        flex-wrap: wrap;
+        width: 300px;
+        justify-content: baseline;
+        gap: 15px;
+        color: white;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .elements p{
+        background-color: rgba(76, 77, 78, 0.8) ;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+    .footer-container{
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 0;
+    }
+    .footer-bottom{
+        padding: 1rem;
+    }
+    .footer-bottom h3{
+        margin: 10px;
+        font-weight: 500;
+        color: rgb(235, 230, 230);
+    }
+    .footer-bottom h4{
+        margin: 10px;
+        font-weight: 400;
+        cursor: pointer;
+        color: rgb(156, 152, 152);
+        text-decoration: none;
+    }
+    .footer-bottom a {
+        text-decoration: none;
+    }
+    .footer-section{
+        display: flex;
+        flex-direction: column;
+        color: rgb(156, 152, 152);
+        margin-top: 20px;
+        padding: 0;
+        max-width: 420px;
+        gap: 10px;
+    }
+}

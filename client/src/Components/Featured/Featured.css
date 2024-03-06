@@ -1,0 +1,98 @@
+.featured-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  padding-bottom: 5rem;
+  align-items: center;
+  background-color: #fff;
+}
+.feature-deals-title {
+  background-color: rgba(146, 198, 233, 0.5);
+  padding: 0.8rem;
+  margin: 20px;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 8px;
+  color: rgb(51, 123, 206);
+}
+.featured-vehicle {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+
+.vehicle {
+  width: 320px;
+  height: auto;
+  margin: 15px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: rgb(1, 1, 1);
+}
+.vehicle:hover {
+  border-radius: 8px;
+  transition: 0.2s ease;
+  border-radius: 10px;
+}
+.vehicle img {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  cursor: pointer;
+  background-color: white;
+  opacity: 0.7;
+  object-fit: cover;
+}
+.vehicle img:hover {
+  transition: 0.3s ease;
+  opacity: 0.5;
+}
+
+.vehicle h3 {
+  color: black;
+  display: flex;
+  flex-direction: column;
+}
+.featured-car-details {
+  margin: 7px 30px;
+}
+.car-features {
+  display: flex;
+  flex-direction: row;
+}
+.car-features .car {
+  padding-right: 10px;
+  margin: 10px 0;
+  color: rgb(216, 95, 19);
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+.featured-car-price {
+  margin: 5px;
+}
+
+.show-all-btn {
+  padding: 0.8rem 3.2rem;
+  outline: none;
+  background-color: white;
+  margin: 50px 10px;
+  border: 1px solid rgb(206, 200, 200);
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+}
+.show-all-btn:hover {
+  background-color: rgb(243, 242, 242);
+  transition: 0.2s ease;
+}
+.show-btn-arrow {
+  position: absolute;
+  margin: 2px 5px;
+}
+
+@media (max-width: 768px) {
+  .featured-vehicle {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,135 @@
+.signup-container {
+  width: 100%;
+  height: 100vh;
+  padding-top: 100px;
+}
+.signup-form-container {
+  border-radius: 14px;
+  width: 500px;
+  display: flex;
+  box-shadow: 2px 2px 3px 4px rgb(189, 187, 187);
+  height: 600px;
+  margin: auto;
+  border-radius: 10px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: white;
+}
+.signup-form {
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+
+.signup-form input {
+  width: 100%;
+  height: 50px;
+  padding: 20px;
+  background-color: #e0f0ee;
+  margin: 10px auto;
+  border: none;
+  font-size: 16px;
+  outline: none;
+  border-radius: 8px;
+}
+.signup-btn {
+  width: 150px;
+  height: 45px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  margin: 10px auto;
+  cursor: pointer;
+  color: white;
+  background-color: #2de1a8;
+}
+.or-opt {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.google-img {
+  height: 20px;
+  position: absolute;
+  margin: -3px -30px;
+  width: 20px;
+}
+
+.login-with-google-btn {
+  width: 60%;
+  margin: 20px auto;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid rgb(220, 217, 217);
+  background-color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+}
+.login-with-google-btn:hover {
+  transition: 0.2s ease;
+  background-color: #fcfbf9;
+}
+.or-opt h3 {
+  text-align: center;
+}
+
+.hr-11 {
+  position: absolute;
+  margin-top: 360px;
+  width: 160px;
+  margin-left: 35px;
+}
+.hr-22 {
+  position: absolute;
+  margin-top: 360px;
+  margin-left: 240px;
+  width: 160px;
+}
+@media (max-width: 768px) {
+  .signup-form-container {
+    border-radius: 14px;
+    width: 95%;
+    display: flex;
+    box-shadow: 2px 2px 3px 4px rgb(189, 187, 187);
+    height: 600px;
+    margin: auto;
+    border-radius: 10px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: white;
+  }
+  .signup-form {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+  .signup-form input {
+    width: 100%;
+    height: 50px;
+    padding: 20px;
+    background-color: #e0f0ee;
+    margin: 10px auto;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    border-radius: 8px;
+  }
+  .hr-11 {
+    width: 35%;
+    margin-left: -5px;
+    margin-top: 360px;
+  }
+  .hr-22 {
+    width: 35%;
+    margin-right: 0;
+    margin-left: 185px;
+    margin-top: 360px;
+  }
+}

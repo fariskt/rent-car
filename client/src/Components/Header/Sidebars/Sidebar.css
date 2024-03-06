@@ -1,0 +1,111 @@
+.sidebar {
+  padding: 50px;
+  width: 430px;
+ padding-left: 140px;
+  background-color: #fff;
+}
+.sidebar h2 {
+  margin: 0 10px;
+  color: #474747;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  margin-top: 10px;
+}
+.select-location {
+  border: none;
+  border-bottom: 1px solid rgb(175, 175, 175);
+  font-size: 1.2rem;
+  outline: none;
+  width: 100%;
+  color: rgb(55, 55, 55);
+  margin: 0 10px;
+  cursor: pointer;
+}
+.select-location option{
+ font-size: 1rem;
+}
+.price-title {
+  color: #474747;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 15px 10px;
+}
+.price-range p {
+  margin: 0 10px;
+  font-size: 12px;
+}
+.price-range select {
+  border: none;
+  border-bottom: 1px solid rgb(175, 175, 175);
+  outline: none;
+  font-size: 1.2rem;
+  width: 115px;
+  font-weight: 600;
+  margin: 8px;
+  cursor: pointer;
+  height: 40px;
+}
+.price-range select option {
+  color: rgb(55, 55, 55);
+  font-size: 1.1rem;
+}
+.rent-time-title {
+  color: #2d2d2d;
+  font-weight: 500;
+}
+.rent-time-select {
+  border: none;
+  border-bottom: 1px solid rgb(175, 175, 175);
+  margin-right: 10px;
+  outline: none;
+  cursor: pointer;
+  color: #232323;
+  font-weight: 600;
+  width: 100%;
+  margin: 5px 10px;
+  font-size: 1.3rem;
+  height: 40px;
+}
+.sidebar-content h3 {
+  margin: 5px 10px;
+  color: #474747;
+  font-weight: 500;
+}
+
+.inp-container {
+  display: flex;
+  margin-left: 5px;
+}
+.sidebar-content label {
+  height: 20px;
+  font-size: 0.9rem;
+  margin: 8px 0;
+}
+.sidebar-content input {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  margin: 8px;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: row;
+}
+.mobile{
+  display: none;
+}
+@media (max-width:768px){
+  .pc{
+    display: none;
+  }
+  .mobile{
+    display: block;
+  }
+  
+}

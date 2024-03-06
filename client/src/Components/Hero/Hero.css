@@ -1,0 +1,296 @@
+.welcome-container {
+  color: #333;
+  background: #f9f9f9
+    url("https://t4.ftcdn.net/jpg/02/52/46/25/360_F_252462576_koy7njo9iYx6gUcM26IZcDUs9fMKIKJs.jpg")
+    repeat;
+  height: 100vh;
+  text-align: center;
+  padding: 200px;
+}
+.welcome-container h1 {
+  font-size: 3rem;
+}
+.welcome-container h3 {
+  margin: 30px auto;
+  max-width: 620px;
+  font-weight: 500;
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  margin: 10px;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.button-primary {
+  background-color: #3498db;
+}
+.button-primary:hover {
+  background-color: #1e98ea;
+}
+
+.button-secondary {
+  background-color: #19ac59;
+}
+.button-secondary:hover {
+  background-color: #24bc66;
+}
+
+.bg-image {
+  margin-left: 100px;
+}
+.bg-image img {
+  height: 400px;
+  z-index: -10;
+  object-fit: contain;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  z-index: -1;
+}
+.container-heading {
+  display: flex;
+  flex-direction: column;
+  margin: 80px 50px;
+}
+.container h1 {
+  width: 350px;
+  margin: auto;
+  font-size: 44px;
+  color: black;
+}
+.container h3 {
+  width: 350px;
+  font-weight: 400;
+  font-size: 18px;
+  margin: 20px auto;
+  color: black;
+}
+.container .rent-btn {
+  background-color: rgb(67, 190, 119);
+  height: 50px;
+  width: 95%;
+  margin: 30px auto;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+.form-header {
+  margin: auto;
+  border: 2px solid rgb(116, 116, 116);
+  border-radius: 12px;
+  width: 90%;
+}
+.pickup-date,
+.return-date {
+  width: 50%;
+  border-right: 1px solid black;
+}
+.form-container {
+  margin: 10px;
+}
+.trip-form {
+  color: white;
+  border-radius: 10px;
+  padding-left: 10px;
+  margin-left: 100px;
+}
+
+.trip-form form {
+  display: flex;
+  width: 450px;
+  flex-direction: column;
+  background-color: #fff;
+  border: 2px solid rgb(222, 243, 255);
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 5px;
+}
+.trip-form form h3 {
+  text-align: center;
+  font-size: 1.5rem;
+  width: fit-content;
+  font-weight: 500;
+  color: rgb(45, 45, 45);
+}
+.trip-form form span {
+  margin-top: 10px;
+  font-size: 30px;
+  color: rgb(96, 92, 92);
+}
+.trip-form input {
+  margin-top: 20px;
+  border: none;
+  padding-left: 10px;
+  width: 90%;
+  outline: none;
+  border-radius: 4px;
+  color: black;
+}
+
+.trip-form h5 {
+  color: black;
+  font-weight: 500;
+}
+.trip-form form .div-container {
+  display: flex;
+  flex-direction: row;
+  width: 96%;
+  gap: 3px;
+  margin: 0px auto;
+  height: 50px;
+}
+
+.trip-form form .border-right {
+  margin: 0 10px;
+}
+.trip-form .return-date {
+  border: none;
+}
+.rent-btn {
+  background-color: rgb(41, 227, 122);
+  height: 45px;
+  width: 180px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+}
+
+input::placeholder {
+  color: rgb(154, 147, 147);
+  font-size: 0.9rem;
+}
+.black {
+  color: black;
+}
+.location select {
+  outline: none;
+  margin-top: 15px;
+  width: 330px;
+  border: none;
+  font-size: 1rem;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .welcome-container {
+    color: #333;
+    margin: auto;
+    background: #f9f9f9
+      url("https://t4.ftcdn.net/jpg/02/52/46/25/360_F_252462576_koy7njo9iYx6gUcM26IZcDUs9fMKIKJs.jpg")
+      none;
+    background-size: 100%;
+    text-align: center;
+    height: 600px;
+    padding: 140px 0;
+  }
+  .welcome-container h1 {
+    font-size: 2rem;
+    margin: auto;
+    max-width: 250px;
+  }
+  .welcome-container h3 {
+    font-size: 1.2rem;
+    padding: 0 10px;
+  }
+  .welcome-container a {
+    display: inline-block;
+    width: fit-content;
+  }
+  .button {
+    padding: 15px;
+  }
+  .form-container {
+    margin: 0;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    z-index: -1;
+  }
+  .container-heading {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin: 0;
+    margin-top: 0;
+  }
+  .container h1 {
+    width: 280px;
+    text-align: center;
+    margin: auto;
+    font-size: 28px;
+    color: black;
+  }
+  .container h3 {
+    width: 350px;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 20px auto;
+    color: black;
+  }
+  .bg-image {
+    margin-left: 20px;
+  }
+  .bg-image img {
+    height: 150px;
+    margin-top: 30px;
+    z-index: -10;
+    object-fit: contain;
+    width: 100%;
+  }
+  .trip-form {
+    padding-left: 0;
+    margin-left: 0;
+  }
+  .trip-form form {
+    display: flex;
+    max-width: 94%;
+    flex-direction: column;
+    margin: auto;
+    background-color: #fff;
+    border: 2px solid rgb(222, 243, 255);
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 5px;
+  }
+  .trip-form h5 {
+    margin: 3px 0;
+  }
+  .location {
+    width: 100%;
+  }
+  .location select {
+    width: 90%;
+    background-color: #fff;
+  }
+  .trip-form input {
+    margin-top: 20px;
+    border: none;
+    padding-left: 5px;
+    width: 100%;
+    outline: none;
+    border-radius: 4px;
+    color: black;
+  }
+}

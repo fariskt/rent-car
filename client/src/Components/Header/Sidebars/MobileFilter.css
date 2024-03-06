@@ -1,0 +1,221 @@
+.mobile-sidebar {
+  top: 145px;
+  position: relative;
+  width: 100vw;
+  height: 115vh;
+  z-index: 20;
+  padding-left: 10px;
+  background-color: white;
+  border: 1px solid rgb(177, 177, 177);
+  border-radius: 15px 15px 0 0;
+  padding: 1rem 0.7rem;
+}
+.mobile-sidebar h2 {
+  margin: 0 10px;
+  color: #474747;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.first-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+.first-header h5 {
+  font-size: 24px;
+}
+.sortby-price {
+  margin: 20px;
+}
+
+.checkbox-item {
+  list-style-type: none;
+  cursor: pointer;
+  width: fit-content;
+  padding-left: 25px;
+  font-size: 15px;
+  margin: 20px 10px;
+}
+
+.checkbox-item::before {
+  position: absolute;
+
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  left: 30px;
+  border: 2px solid orange;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.checkbox-item.selected::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  margin-top: 3.8px;
+  left: 33.8px;
+  width: 14px;
+  height: 14px;
+  background-color: rgb(255, 123, 0);
+  border-radius: 50%;
+}
+.segment-img {
+  width: 50px;
+  height: 20px;
+  margin: 0 10px;
+  object-fit: cover;
+}
+.segment {
+  width: 80px;
+  height: 50px;
+  border: 1px solid rgb(194, 194, 194);
+  padding: 5px;
+  border-radius: 8px;
+}
+.segment-clicked {
+  width: 80px;
+  text-align: center;
+  height: 50px;
+  border: 1px solid rgb(234, 77, 20);
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.segment h6 {
+  text-align: center;
+}
+.segment-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin: 5px 10px;
+}
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  margin-top: 10px;
+}
+
+.select-location {
+  border: none;
+  border-bottom: 1px solid rgb(175, 175, 175);
+  font-size: 1.2rem;
+  outline: none;
+  width: 100%;
+  color: rgb(55, 55, 55);
+  margin: 0 10px;
+  cursor: pointer;
+}
+.select-location option {
+  font-size: 1rem;
+}
+.price-title {
+  color: #474747;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 15px 10px;
+}
+.price-range p {
+  margin: 0 10px;
+  font-size: 12px;
+}
+.price-range select {
+  border: none;
+  border-bottom: 1px solid rgb(175, 175, 175);
+  outline: none;
+  font-size: 1.2rem;
+  width: 115px;
+  font-weight: 600;
+  margin: 8px;
+  cursor: pointer;
+  height: 40px;
+}
+.price-range select option {
+  color: rgb(55, 55, 55);
+  font-size: 1.1rem;
+}
+.rent-time-title {
+  color: #2d2d2d;
+  font-weight: 500;
+}
+.rent-time-select {
+  border: none;
+  border-bottom: 1px solid rgb(175, 175, 175);
+  margin-right: 10px;
+  outline: none;
+  cursor: pointer;
+  color: #232323;
+  font-weight: 600;
+  width: 100%;
+  margin: 5px 10px;
+  font-size: 1.3rem;
+  height: 40px;
+}
+.sidebar-content h3 {
+  margin: 5px 10px;
+  color: #474747;
+  font-weight: 500;
+}
+
+.inp-container {
+  display: flex;
+  margin-left: 5px;
+}
+.sidebar-content label {
+  height: 20px;
+  font-size: 16px;
+  margin: 5px 0;
+}
+.inp-container input {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  margin: 8px;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: row;
+}
+.fuel-container {
+  width: 340px;
+}
+.fuel-container p {
+  text-align: center;
+  width: 135px;
+  border: 1px solid rgb(186, 186, 186);
+  display: inline-block;
+  padding: 10px 40px;
+  margin: 0 10px;
+  font-size: 14px;
+  height: 40px;
+  font-weight: 600;
+  border-radius: 6px;
+  color: rgb(120, 120, 120);
+}
+.fuel-container .clicked-border {
+  border: 1px solid rgb(234, 77, 20);
+} 
+.apply-btn{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.apply-button {
+  position: fixed;
+  border: none;
+  border-radius: 8px;
+  bottom: 2%;
+  width: 90%;
+  font-size: 1rem;
+  height: 50px;
+  text-align: center;
+  background-color: rgb(36, 145, 172);
+  color: white;
+
+}

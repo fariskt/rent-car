@@ -1,0 +1,122 @@
+.driver-details {
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
+  padding: 10px;
+  border-radius: 4px;
+  padding-bottom: 2em;
+}
+ 
+.driver-details h3 {
+  margin: 20px 45px;
+  font-size: 20px;
+  color: rgb(15, 119, 83);
+}
+.driver-details form {
+  display: flex;
+  
+  padding: 10px;
+  gap: 40px 30px;
+  margin: 20px auto;
+  flex-wrap: wrap;
+  max-width: 680px;
+}
+.driver-details form input {
+  height: 45px;
+  width: 220px;
+  outline: none;
+  margin: 15px 0;
+  padding-left: 10px;
+  font-size: 0.9rem;
+  border: 1px solid rgb(165, 165, 165);
+  background-color: #ffffff;
+}
+.driving-license-inp input {
+  padding: 10px;
+}
+.city-zipcode {
+  display: inline-flex;
+  gap: 20px;
+}
+.city-zipcode .zip-inp {
+  width: 305px;
+}
+.driver-details form div {
+  height: 60px;
+}
+.address .address-inp {
+  width: 625px;
+}
+.age select {
+  height: 45px;
+  margin: 15px 0;
+  outline: none;
+  border: 1px solid rgb(165, 165, 165);
+  background-color: #ffffff;
+  color: #3a3a3a;
+  padding-left: 5px;
+  font-size: 1rem;
+  width: 150px;
+}
+.age select option {
+  font-size: 1rem;
+}
+.continue-form-btn {
+  display: flex;
+  justify-content: end;
+  gap: 15px;
+  margin-top: 50px;
+  align-items: center;
+  background-color: #868282;
+  padding-right: 60px;
+  height: 70px;
+  width: 100%;
+}
+.continue-form-btn .close-button {
+  background-color: #3a3838;
+  height: 45px;
+  border: 2px solid rgb(179, 179, 179);
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 100px;
+}
+.continue-form-btn .close-button:hover {
+  background-color: #4d4949;
+  transition: 0.2s ease;
+}
+.continue-form-btn .reserve-btn {
+  background-color: rgb(20, 156, 111);
+  height: 45px;
+  border: 2px solid rgb(179, 179, 179);
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  width: 150px;
+}
+.continue-form-btn .reserve-btn:hover {
+  transition: 0.2s ease;
+  background-color: rgb(17, 132, 93);
+}
+
+.reserve-form-icon {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .driver-details form {
+    margin-left: 20px;
+  }
+  .address .address-inp {
+    width: 305px;
+  }
+  .age select {
+    margin: 5px 0;
+  }
+  .city-zipcode {
+    display: inline-flex;
+    flex-direction: column;
+  }
+  .continue-form-btn {
+    margin-top: 120px;
+  }
+}

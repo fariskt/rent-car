@@ -1,0 +1,324 @@
+.renter-form-container {
+  max-width: 665px;
+  padding: 25px;
+  margin: 30px auto;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px 2px rgb(176, 174, 174);
+}
+
+.black {
+  color: black;
+}
+.vehicle-details {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgb(174, 174, 174);
+  gap: 15px;
+}
+.vehicle-details h3 {
+  font-size: 24px;
+  margin: 30px 0;
+  color: rgb(19, 173, 73);
+}
+.vehicle-details form {
+  display: flex;
+  gap: 0 15px;
+  margin: 20px auto;
+  flex-wrap: wrap;
+}
+.vehicle-details input {
+  height: 45px;
+  border: 1px solid rgb(177, 177, 177);
+  background-color: #ffffff;
+  width: 300px;
+  outline: none;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 0.9rem;
+}
+form input,
+form select {
+  border-radius: 3px;
+}
+.form-name select {
+  height: 45px;
+  margin: 10px auto;
+  outline: none;
+  padding: 10px;
+  border: 1px solid rgb(177, 177, 177);
+  background-color: #ffffff;
+  color: #3a3a3a;
+  font-size: 1rem;
+  width: 300px;
+}
+.city-zipcode {
+  display: inline-flex;
+  gap: 20px;
+}
+.city-zipcode .zip-inp {
+  width: 300px;
+}
+
+.vehicle-details form div h4 {
+  height: 5px;
+}
+
+.renter-vehicle select {
+  height: 47px;
+  margin: 8px auto;
+  padding: 10px;
+  outline: none;
+  border: 1px solid rgb(177, 177, 177);
+  background-color: #ffffff;
+  color: #3a3a3a;
+  font-size: 1rem;
+  width: 130px;
+}
+.select-option {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  gap: 0 25px;
+}
+.renter-vehicle select option {
+  font-size: 1.1rem;
+}
+.renter-pick-location select {
+  height: 45px;
+  margin: 10px auto;
+  padding: 10px;
+  outline: none;
+  border: 1px solid rgb(177, 177, 177);
+  background-color: #ffffff;
+  color: #3a3a3a;
+  font-size: 1rem;
+  width: 300px;
+}
+.renter-btn {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 50px;
+  align-items: center;
+  background-color: #868282;
+  height: 70px;
+}
+
+.renter-btn .renter-form-btn {
+  background-color: rgb(23, 188, 86);
+  height: 45px;
+  border: 2px solid rgb(179, 179, 179);
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  width: 150px;
+}
+.renter-btn .renter-form-btn:hover {
+  transition: 0.2s ease;
+  background-color: rgb(17, 132, 63);
+}
+
+.legal-history select {
+  height: 45px;
+  margin: 20px auto;
+  outline: none;
+  padding: 10px;
+  border: 1px solid rgb(177, 177, 177);
+  background-color: #ffffff;
+  color: #3a3a3a;
+  font-size: 1rem;
+  width: 340px;
+  padding-bottom: 1rem;
+}
+
+.upload-car-image input {
+  width: 340px;
+  height: 45px;
+  padding-top: 10px;
+}
+
+.personal-details {
+  background-color: white;
+  display: flex;
+  gap: 0 15px;
+  flex-wrap: wrap;
+}
+.personal-details input {
+  height: 45px;
+  border: 1px solid rgb(177, 177, 177);
+  background-color: #ffffff;
+  width: 300px;
+  outline: none;
+  margin: 10px 0;
+  padding-left: 10px;
+  font-size: 0.9rem;
+}
+.personal-details textarea {
+  height: 45px;
+  border: 1px solid rgb(177, 177, 177);
+  background-color: #ffffff;
+  width: 100%;
+  outline: none;
+  margin: 15px 0;
+  padding: 5px;
+  font-size: 0.9rem;
+}
+.address .address-inp {
+  width: 640px;
+}
+
+.personal-details div {
+  height: 100px;
+}
+
+.renter-form-document input {
+  height: 45px !important;
+  padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .renter-form-container {
+    max-width: 95%;
+    padding: 15px;
+    margin: 30px auto;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 2px rgb(176, 174, 174);
+  }
+  .pick-location select {
+    height: 47px;
+    margin: 30px auto;
+    padding: 10px;
+    outline: none;
+    border: 1px solid rgb(177, 177, 177);
+    background-color: #ffffff;
+    color: #3a3a3a;
+    font-size: 1rem;
+    width: 95%;
+  }
+
+  .personal-details {
+    background-color: white;
+    display: flex;
+    gap: 0 30px;
+    flex-direction: column;
+    width: 100%;
+  }
+  .personal-details div {
+    height: 100px;
+    width: 100%;
+  }
+  .personal-details input {
+    height: 45px;
+    border: 1px solid rgb(177, 177, 177);
+    background-color: #ffffff;
+    width: 100%;
+    outline: none;
+    margin: 10px 0;
+    padding-left: 10px;
+    font-size: 0.9rem;
+  }
+  .renter-pick-location select {
+    height: 47px;
+    margin: 10px auto;
+    padding: 10px;
+    outline: none;
+    width: 100%;
+    border: 1px solid rgb(177, 177, 177);
+    background-color: #ffffff;
+    color: #3a3a3a;
+    font-size: 1rem;
+  }
+  .address .address-inp {
+    width: 90%;
+  }
+  .city-zipcode {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+  .renter-btn {
+    display: flex;
+    justify-content: center;
+    background-color: #868282;
+    height: 70px;
+    margin-top: 120px;
+    width: 100%;
+  }
+
+  .vehicle-details {
+    border: none;
+  }
+  .renter-vehicle select {
+    margin-top: 15px;
+    padding: 10px;
+    outline: none;
+    border: 1px solid rgb(177, 177, 177);
+    background-color: #ffffff;
+    color: #3a3a3a;
+    font-size: 1rem;
+    width: 100px;
+  }
+  .vehicle-details form {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    gap: 0 30px;
+  }
+  .vehicle-details input {
+    margin: 5px 0;
+    width: 100%;
+  }
+  .vehicle-details div {
+    width: 100%;
+  }
+  .form-name select {
+    margin: 10px 0;
+    width: 100%;
+  }
+  .upload-car-image input {
+    padding-top: 10px;
+    border-bottom: 1px solid rgb(177, 175, 175);
+  }
+  .upload-car-image .car-image input {
+    width: 100%;
+  }
+  .legal-history {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+  .legal-history select {
+    font-size: 0.9rem;
+    width: 100%;
+  }
+  .legal-history select option {
+    font-size: 0.9rem;
+  }
+  .select-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+  }
+  .select-option div {
+    width: 45%;
+  }
+  .personal-details textarea {
+    height: 45px;
+    border: 1px solid rgb(177, 177, 177);
+    background-color: #ffffff;
+    width: 100% !important;
+    outline: none;
+    margin: 15px 0;
+    padding: 5px;
+    font-size: 0.9rem;
+  }
+  .city-zipcode {
+    display: inline-flex;
+    gap: 20px;
+  }
+  .city-zipcode .zip-inp {
+    width: 100% !important;
+  }
+}
