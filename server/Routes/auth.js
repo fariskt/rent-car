@@ -28,7 +28,7 @@ passport.use(
     {
       clientID: clientid,
       clientSecret: clientsecret,
-      callbackURL: "https://car4rental.vercel.app/auth/google/callback",
+      callbackURL: "https://rent-car-api.vercel.app/auth/google/callback",
       scope: ["profile", "email"],
     },
     async (accessToken, refreshToken, profile, done) => {
@@ -74,7 +74,7 @@ router.get(
   "/auth/google/callback",
   passport.authenticate("google", {
     successRedirect: "https://car4rental.vercel.app/",
-    failureRedirect: "https://car4rental.vercel.app/login", // Update if needed
+    failureRedirect: "https://car4rental.vercel.app/login",
   })
 );
 
