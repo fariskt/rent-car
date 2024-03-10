@@ -41,7 +41,7 @@ const Renter = () => {
       Object.entries(formData).forEach(([key, value]) => {
         formDataToSend.append(key, value);
       });
-      const response = await fetch("http://localhost:8000/api/renter-vehicle", {
+      const response = await fetch("https://rent-car-api.vercel.app/api/renter-vehicle", {
         method: "POST",
         body: formDataToSend,
       });

@@ -51,7 +51,7 @@ export const AppProvider = ({ children }) => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/renter-vehicle"
+          "https://rent-car-api.vercel.app/api/renter-vehicle"
         );
         const vehiclesData = await response.json();
         dispatch({ type: "SET_VEHICLES", payload: vehiclesData });
