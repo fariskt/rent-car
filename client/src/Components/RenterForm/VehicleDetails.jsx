@@ -1,6 +1,18 @@
 import React from "react";
+import DatePicker from "react-datepicker";
 
-const VehicleDetails = () => {
+const VehicleDetails = ({
+  formData,
+  handleChange,
+  imageSrc,
+  selectedPickupDate,
+  selectedReturnDate,
+  handleDatePickUpChange,
+  handleDateReturnDateChange
+  
+}) => {
+  const currentDate = new Date().toISOString().split("T")[0];
+
   return (
     <>
       <h3
@@ -17,11 +29,23 @@ const VehicleDetails = () => {
       <div className="vehicle-details">
         <div className="form-name">
           <h4>Car Name</h4>
-          <input type="text" placeholder="Enter car name and model" />
+          <input
+            type="text"
+            name="car_name"
+            placeholder="Enter car name and model"
+            onChange={handleChange}
+            required
+            value={formData.car_name}
+          />
         </div>
         <div className="form-name">
           <h4>Brand Name</h4>
-          <select name="" id="">
+          <select
+            name="car_brand"
+            value={formData.car_brand}
+            required
+            onChange={handleChange}
+          >
             <option value="">Select Brand</option>
             <option value="toyota">Toyoto</option>
             <option value="honda">Honda</option>
@@ -33,101 +57,155 @@ const VehicleDetails = () => {
 
         <div className="renter-vehicle">
           <h4>Rental Period Start</h4>
-          <input
-            type="text"
-            placeholder="Enter rental start date"
-            onChange={(e) => console.log(e.target.value)}
-            onFocus={(e) => (e.target.type = "date")}
-            onBlur={(e) => (e.target.type = "text")}
+          <DatePicker
+            selected={selectedPickupDate}
+            minDate={currentDate}
+            value={formData.pickup_date}
+            onChange={(date) => handleDatePickUpChange("pickup_date", date)}
+            required
+            onFocus={(e) => (e.target.readOnly = true)}
+            withPortal
+            placeholderText="Enter pickup date"
           />{" "}
         </div>
         <div className="renter-vehicle">
           <h4>Rental Period End</h4>
-          <input
-            type="text"
-            placeholder="Enter rentel end date"
-            onChange={(e) => console.log(e.target.value)}
-            onFocus={(e) => (e.target.type = "date")}
-            onBlur={(e) => (e.target.type = "text")}
+          <DatePicker
+            selected={selectedReturnDate}
+            value={formData.return_date}
+            minDate={currentDate}
+            onChange={(date) => handleDateReturnDateChange("return_date", date)}
+            onFocus={(e) => (e.target.readOnly = true)}
+            required
+            withPortal
+            placeholderText="Enter return date"
           />{" "}
         </div>
         <div>
           <h4>Rent Amount</h4>
-          <input type="number" placeholder="Enter rent amount"/>
+          <input
+            type="text"
+            placeholder="Enter rent amount"
+            value={formData.price}
+            name="price"
+            onChange={handleChange}
+            required
+          />
         </div>
         <div className="renter-pick-location">
           <h4>Pickup Location</h4>
-          <select name="" id="">
-            <option value="">Kasaragod</option>
-            <option value="">Kannur</option>
-            <option value="">Wayanad</option>
-            <option value="">Kozhikode</option>
-            <option value="">Malappuram</option>
-            <option value="">Palakkad</option>
-            <option value="">Thrissur</option>
-            <option value="">Ernakulam</option>
-            <option value="">Idukki</option>
-            <option value="">Kottayam</option>
-            <option value="">Alappuzha</option>
-            <option value="">Pathanamthitta</option>
-            <option value="">Kollam</option>
-            <option value="">Thiruvananthapuram</option>
+          <select
+            name="location"
+            value={formData.location}
+            onChange={handleChange}
+            required
+          >
+            <option value="">Select Location</option>
+            <option value="kasaragod">Kasaragod</option>
+            <option value="kannur">Kannur</option>
+            <option value="wayanad">Wayanad</option>
+            <option value="kozhikode">Kozhikode</option>
+            <option value="malappuram">Malappuram</option>
+            <option value="palakkad">Palakkad</option>
+            <option value="thrissur">Thrissur</option>
+            <option value="ernakulam">Ernakulam</option>
+            <option value="idukki">Idukki</option>
+            <option value="kottayam">Kottayam</option>
+            <option value="alappuzha">Alappuzha</option>
+            <option value="pathanamthitta">Pathanamthitta</option>
+            <option value="kollam">Kollam</option>
+            <option value="thiruvananthapuram">Thiruvananthapuram</option>
           </select>
         </div>
+
         <div className="select-option">
           <div className="renter-vehicle">
             <h4>Transmission</h4>
-            <select name="" id="">
-              <option value="">Auto</option>
-              <option value="">Manual</option>
-            </select>
-          </div>
-          <div className="renter-vehicle">
-            <h4>Air Conditioning</h4>
-            <select name="" id="">
-              <option value="">Yes</option>
-              <option value="">No</option>
-            </select>
-          </div>
-          <div className="renter-vehicle">
-            <h4>Number of Seats</h4>
-            <select name="" id="">
-              <option value="">7</option>
-              <option value="">5</option>
-              <option value="">4</option>
-            </select>
-          </div>
-          <div className="renter-vehicle">
-            <h4>Fuel</h4>
-            <select name="" id="">
-              <option value="">Diesel</option>
-              <option value="">Petrol</option>
-              <option value="">Other</option>
+            <select
+              name="transmission"
+              value={formData.transmission}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select</option>
+              <option value="auto">Auto</option>
+              <option value="manual">Manual</option>
             </select>
           </div>
           <div className="renter-vehicle">
             <h4>Segment</h4>
-            <select name="" id="">
-              <option value="">Sedan</option>
-              <option value="">Hatchback</option>
-              <option value="">SUV/MUV</option>
+            <select
+              name="segment"
+              value={formData.segment}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select </option>
+              <option value="sedan">Sedan</option>
+              <option value="hatchback">Hatchback</option>
+              <option value="suv/muv">SUV/MUV</option>
+            </select>
+          </div>
+          <div className="renter-vehicle">
+            <h4>Air Conditioning</h4>
+            <select
+              name="air_condition"
+              value={formData.air_condition}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <div className="renter-vehicle">
+            <h4>Number of Seats</h4>
+            <select
+              name="seat_capacity"
+              value={formData.seat_capacity}
+              required
+              onChange={handleChange}
+            >
+              <option value="">Select </option>
+              <option value="7">7</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+          <div className="renter-vehicle">
+            <h4>Fuel</h4>
+            <select
+              name="fuel"
+              value={formData.fuel}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select</option>
+              <option value="diesel">Diesel</option>
+              <option value="petrol">Petrol</option>
+              <option value="ev">EV</option>
             </select>
           </div>
         </div>
         <div className="upload-car-image">
           <h4>Upload Your Car Image</h4>
-          <input type="file" />
+          <input
+            type="file"
+            className="myfile"
+            accept="image/*"
+            id={"file"}
+            name="img"
+            required
+            onChange={handleChange}
+          />
         </div>
+        {imageSrc && <img src={imageSrc} />}
         <div className="legal-history">
           <h4>Legal History</h4>
-          <select id="legalHistory" name="legalHistory" required>
-            <option value="clean">No Legal Cases Against the Vehicle</option>
-            <option value="pending">
-              Legal Case Pending (No Resolution Yet)
-            </option>
-            <option value="resolved">
-              Legal Case Resolved (No Ongoing Issues)
-            </option>
+          <select>
+            <option value="">No Legal Cases Against the Vehicle</option>
+            <option value="">Legal Case Pending (No Resolution Yet)</option>
+            <option value="">Legal Case Resolved (No Ongoing Issues)</option>
           </select>
         </div>
       </div>

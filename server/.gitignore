@@ -15,3 +15,4 @@ vendor/
 
 # Ignore environment-specific files
 .env
+serviceKey.json

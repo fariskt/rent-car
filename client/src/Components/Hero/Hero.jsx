@@ -4,18 +4,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { SlLocationPin } from "react-icons/sl";
 import { MdOutlineDateRange } from "react-icons/md";
 import DatePicker from "react-datepicker";
-
 import "react-datepicker/dist/react-datepicker.css";
 import Featured from "../Featured/Featured";
 import HowItWorks from "./HowItWorks";
-import { vehicles } from "../../Data/data";
 import { AppContext } from "../../contexts/AppContext";
 import Footer from "../Footer/Footer";
 
 const Hero = () => {
-  const { location, pickupDate, returnDate, dispatch, setDuration } =
+  const { location, pickupDate, returnDate, dispatch, setDuration, vehicles } =
     useContext(AppContext);
-
   const currentDate = new Date().toISOString().split("T")[0];
   const navigate = useNavigate();
 
@@ -23,19 +20,34 @@ const Hero = () => {
     event.preventDefault();
 
     const filtered = vehicles.filter((vehicle) => {
-      const vehiclePickup = new Date(vehicle.pickup_date);
-      const vehicleReturn = new Date(vehicle.return_date);
+      const pickupParts = vehicle.pickup_date.split("/");
+      const returnParts = vehicle.return_date.split("/");
+
+      const vehiclePickup = new Date(
+        parseInt(pickupParts[2]),
+        parseInt(pickupParts[1]) - 1,
+        parseInt(pickupParts[0])
+      );
+      const vehicleReturn = new Date(
+        parseInt(returnParts[2]),
+        parseInt(returnParts[1]) - 1,
+        parseInt(returnParts[0])
+      );
+
       return (
         vehicle.location === location &&
         vehiclePickup <= new Date(pickupDate) &&
         vehicleReturn >= new Date(returnDate)
       );
     });
+
     dispatch({ type: "SET_FILTERED_VEHICLES", payload: filtered });
     const newPath = "/collection";
     navigate(newPath);
     dispatch({ type: "SET_LOCATION", payload: location });
-    dispatch({type : "SET_SELECTED_LOCATION" , payload: location})
+    dispatch({ type: "SET_SELECTED_LOCATION", payload: location });
+    dispatch({ type: "SET_PICKUP_DATE", payload: pickupDate });
+    dispatch({ type: "SET_RETURN_DATE", payload: returnDate });
     calculateDuration();
   };
 
@@ -111,8 +123,22 @@ const Hero = () => {
                           required
                         >
                           <option value="">Select Location</option>
-                          <option value="malappuram">Malappuram</option>
+                          <option value="kasaragod">Kasaragod</option>
                           <option value="kannur">Kannur</option>
+                          <option value="wayanad">Wayanad</option>
+                          <option value="kozhikode">Kozhikode</option>
+                          <option value="malappuram">Malappuram</option>
+                          <option value="palakkad">Palakkad</option>
+                          <option value="thrissur">Thrissur</option>
+                          <option value="ernakulam">Ernakulam</option>
+                          <option value="idukki">Idukki</option>
+                          <option value="kottayam">Kottayam</option>
+                          <option value="alappuzha">Alappuzha</option>
+                          <option value="pathanamthitta">Pathanamthitta</option>
+                          <option value="kollam">Kollam</option>
+                          <option value="thiruvananthapuram">
+                            Thiruvananthapuram
+                          </option>
                         </select>
                       </div>
                     </div>
@@ -129,8 +155,8 @@ const Hero = () => {
                               pickupDate &&
                               new Date(pickupDate).toLocaleDateString()
                             }
-                            minDate={currentDate}
                             dateFormat="DD-MM-YYYY"
+                            minDate={currentDate}
                             onFocus={(e) => (e.target.readOnly = true)}
                             withPortal
                             onChange={(date) =>
@@ -151,11 +177,11 @@ const Hero = () => {
                           <DatePicker
                             selected={returnDate}
                             minDate={pickupDate || currentDate}
+                            dateFormat="DD-MM-YYYY"
                             value={
                               returnDate &&
                               new Date(returnDate).toLocaleDateString()
                             }
-                            dateFormat="DD-MM-YYYY"
                             withPortal
                             onFocus={(e) => (e.target.readOnly = true)}
                             placeholderText="Select Dropoff Date"

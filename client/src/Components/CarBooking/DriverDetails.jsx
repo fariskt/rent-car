@@ -2,7 +2,7 @@ import React from "react";
 import "./ReservationForm.css";
 
 
-const ReservationForm = () => {
+const DriverDetails = () => {
   return (
     <div className="driver-details">
             <h3>Driver Details</h3>
@@ -59,4 +59,4 @@ const ReservationForm = () => {
   );
 };
 
-export default ReservationForm;
+export default DriverDetails;

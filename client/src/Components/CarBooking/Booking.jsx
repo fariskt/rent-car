@@ -4,28 +4,14 @@ import { BsFuelPump } from "react-icons/bs";
 import { IoMdPerson, IoMdSettings } from "react-icons/io";
 import { FaBagShopping } from "react-icons/fa6";
 import { LuFan } from "react-icons/lu";
-import ReservationForm from "./ReservationForm";
 import "./Booking.css";
 import Payment from "./PaymentPage/Payment";
+import DriverDetails from "./DriverDetails";
 
 const Booking = () => {
-  const { bookedVehicle } = useContext(AppContext);
+  const { bookedVehicle, pickupDate, returnDate } = useContext(AppContext);
   const [show, setShow] = useState(false);
-  const pickup_date = bookedVehicle.pickup_date;
-  const return_date = bookedVehicle.return_date;
 
-  const formattedDates = [
-    new Date(pickup_date).toLocaleDateString("en-US", {
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    }),
-    new Date(return_date).toLocaleDateString("en-US", {
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    }),
-  ];
   const paymentGateway = () => {
     setShow(true);
   };
@@ -35,14 +21,14 @@ const Booking = () => {
       <div className="car-booking-details">
         <div className="vehicle-booking-details">
           <h2>
-            {bookedVehicle.brand.charAt(0).toUpperCase() +
-              bookedVehicle.brand.slice(1) +
+            {bookedVehicle.car_brand.charAt(0).toUpperCase() +
+              bookedVehicle.car_brand.slice(1) +
               " " +
-              bookedVehicle.carname.charAt(0).toUpperCase() +
-              bookedVehicle.carname.slice(1)}
+              bookedVehicle.car_name.charAt(0).toUpperCase() +
+              bookedVehicle.car_name.slice(1)}
           </h2>
           <div className="vehicle-features">
-            <img src={bookedVehicle.image} alt="car-image" />
+            <img src={bookedVehicle.img} alt="car-image" />
             <div className="vehicle-info">
               <div className="vehicle-option">
                 <IoMdPerson />
@@ -65,7 +51,7 @@ const Booking = () => {
                     <span>&#10004;</span> Free cancellation
                   </h5>
                   <h5>
-                    <span>&#10004;</span> Free cancellation
+                    <span>&#10004;</span> Affordable Rate
                   </h5>
                   <h5>
                     <span>&#10004;</span> Free cancellation
@@ -100,7 +86,7 @@ const Booking = () => {
           </div>
         </div>
         <div className="driver">
-          <ReservationForm />
+          <DriverDetails />
         </div>
       </div>
       <div className="car-price-details">
@@ -112,14 +98,14 @@ const Booking = () => {
                   <li className="rb-item" ng-repeat="itembx">
                     <div className="timestamp">
                       <h3>Pickup Date</h3>
-                      <br /> {formattedDates[0]}
+                      <br /> {new Date(pickupDate).toLocaleDateString()}
                       <br /> {bookedVehicle.location}
                     </div>
                   </li>
                   <li className="rb-item" ng-repeat="itembx">
                     <div className="timestamp">
                       <h3>Return Date</h3>
-                      <br /> {formattedDates[1]}
+                      <br /> {new Date(returnDate).toLocaleDateString()}
                       <br /> {bookedVehicle.location}
                     </div>
                   </li>
@@ -151,7 +137,7 @@ const Booking = () => {
             </button>
           </div>
         </div>
-          {show && <Payment setShow={setShow} />}
+        {show && <Payment setShow={setShow} />}
       </div>
     </div>
   );

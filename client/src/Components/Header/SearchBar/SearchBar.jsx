@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { AppContext } from "../../../contexts/AppContext";
 import DatePicker from "react-datepicker";
-import { vehicles } from "../../../Data/data";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoArrowBackSharp } from "react-icons/io5";
 import "./SearchBar.css";
@@ -9,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const {
+    vehicles,
     duration,
     setDuration,
     searchQuery,
@@ -21,30 +21,42 @@ const SearchBar = () => {
     setSuggestions,
     selectedLocation,
   } = useContext(AppContext);
-
   const currentDate = new Date().toISOString().split("T")[0];
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const filtered = vehicles.filter((vehicle) => {
-      const vehiclePickup = new Date(vehicle.pickup_date);
-      const vehicleReturn = new Date(vehicle.return_date);
+      const pickupParts = vehicle.pickup_date.split("/");
+      const returnParts = vehicle.return_date.split("/");
+
+      const vehiclePickup = new Date(
+        parseInt(pickupParts[2]),
+        parseInt(pickupParts[1]) - 1,
+        parseInt(pickupParts[0])
+      );
+      const vehicleReturn = new Date(
+        parseInt(returnParts[2]),
+        parseInt(returnParts[1]) - 1,
+        parseInt(returnParts[0])
+      );
+
       return (
-        vehicle.location === selectedLocation &&
+        vehicle.location === location &&
         vehiclePickup <= new Date(pickupDate) &&
         vehicleReturn >= new Date(returnDate)
       );
     });
-    console.log(filtered);
-    dispatch({ type: "SET_LOCATION", payload: selectedLocation || location });
-    dispatch({
-      type: "SET_SELECTED_LOCATION",
-      payload: selectedLocation || location,
-    });
+
     dispatch({ type: "SET_FILTERED_VEHICLES", payload: filtered });
+    const newPath = "/collection";
+    navigate(newPath);
+    dispatch({ type: "SET_LOCATION", payload: location });
+    dispatch({ type: "SET_SELECTED_LOCATION", payload: location });
+    dispatch({ type: "SET_BOOKED_VEHICLE", payload: filtered });
     calculateDuration();
   };
+
   const calculateDuration = () => {
     const startTime = new Date(pickupDate).getTime();
     const endTime = new Date(returnDate).getTime();
@@ -52,10 +64,10 @@ const SearchBar = () => {
     const days = Math.floor(difference / (1000 * 3600 * 24));
     setDuration(`${days} days`);
   };
+
   const handleSearch = (event) => {
     const searchTerm = event.target.value.toLowerCase();
     setSearchQuery(searchTerm);
-
     const [brand, ...carNameParts] = searchTerm.split(" ");
     const partialCarName = carNameParts.join(" ");
 

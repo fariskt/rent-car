@@ -4,10 +4,10 @@ import { filters } from "../Data/data";
 export const AppContext = createContext();
 
 const initailState = {
+  vehicles: JSON.parse(sessionStorage.getItem("vehicles") || "[]"),
   filteredVehicles: JSON.parse(
     sessionStorage.getItem("filteredVehicles") || "[]"
   ),
-  vehicles: JSON.parse(sessionStorage.getItem("vehicles") || "[]"),
   location: sessionStorage.getItem("location") || "",
   sortingOption: sessionStorage.getItem("sortingOption") || "",
   pickupDate: sessionStorage.getItem("pickupDate") || "",
@@ -19,10 +19,10 @@ const initailState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "SET_FILTERED_VEHICLES":
-      return { ...state, filteredVehicles: action.payload };
     case "SET_VEHICLES":
       return { ...state, vehicles: action.payload };
+    case "SET_FILTERED_VEHICLES":
+      return { ...state, filteredVehicles: action.payload };
     case "SET_LOCATION":
       return { ...state, location: action.payload };
     case "SET_SORTING_OPTION":
@@ -47,6 +47,21 @@ export const AppProvider = ({ children }) => {
   const [suggestions, setSuggestions] = useState([]);
   const [duration, setDuration] = useState("");
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:8000/api/renter-vehicle"
+        );
+        const vehiclesData = await response.json();
+        dispatch({ type: "SET_VEHICLES", payload: vehiclesData });
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const initializeSelectedFilters = () => {
     const initialSelectedFilters = {};
@@ -66,11 +81,11 @@ export const AppProvider = ({ children }) => {
   });
 
   useEffect(() => {
+    sessionStorage.setItem("vehicles", JSON.stringify(state.vehicles));
     sessionStorage.setItem(
       "filteredVehicles",
       JSON.stringify(state.filteredVehicles)
     );
-    sessionStorage.setItem("vehicles", JSON.stringify(state.vehicles));
     sessionStorage.setItem("location", state.location);
     sessionStorage.setItem("sortingOption", state.sortingOption);
     sessionStorage.setItem("pickupDate", state.pickupDate);
@@ -81,10 +96,10 @@ export const AppProvider = ({ children }) => {
       JSON.stringify(state.bookedVehicle)
     );
     sessionStorage.setItem("selectedFilters", JSON.stringify(selectedFilters));
-    sessionStorage.setItem("isLoggedIn" , state.isLoggedIn);
+    sessionStorage.setItem("isLoggedIn", state.isLoggedIn);
   }, [
-    state.filteredVehicles,
     state.vehicles,
+    state.filteredVehicles,
     state.location,
     state.sortingOption,
     state.pickupDate,

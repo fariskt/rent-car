@@ -1,11 +1,12 @@
 import React, { useContext, useEffect } from "react";
-import { filters, typeCars, vehicles } from "../../../Data/data";
+import { filters, typeCars } from "../../../Data/data";
 import "./MobileFilter.css";
 import { IoClose } from "react-icons/io5";
 import { AppContext } from "../../../contexts/AppContext";
 
 const MobileFilter = ({ setShowMobile, setFiltersClicked }) => {
   const {
+    vehicles,
     selectedFilters,
     sortingOption,
     setSelectedFilters,

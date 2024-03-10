@@ -15,7 +15,7 @@ const Navbar = () => {
     setIsNavOpen(!isNavOpen);
   };
   const handleLogout = () => {
-    dispatch({ type: "SET_IS_LOGGED", payload: "" });
+    sessionStorage.clear();
   };
   useEffect(() => {
     const handleClick = (e) => {
@@ -109,7 +109,7 @@ const Navbar = () => {
                     <div className="dropdown-content">
                       <a onClick={() => setIsNavOpen(false)}>View Profile</a>
                       <a href="#" onClick={() => setIsNavOpen(false)}>
-                        Edit Profile
+                        Orders
                       </a>
                       <a href="/" onClick={handleLogout}>
                         Logout

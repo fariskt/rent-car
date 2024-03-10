@@ -12,7 +12,7 @@ const PersonalDetails = () => {
                   margin: "30px 0",
                 }}
               >
-                Personal Details
+                Personal Details 
               </h2>
               <div className="form-name">
                 <h4>Full Name</h4>
@@ -33,7 +33,7 @@ const PersonalDetails = () => {
               </div>
               <div className="renter-vehicle">
                 <h4>Age</h4>
-                <select name="" id="">
+                <select>
                   <option value="">18</option>
                   <option value="">19</option>
                   <option value="">20</option>
@@ -53,9 +53,6 @@ const PersonalDetails = () => {
                 <h4>Vehicle Registration Document</h4>
                 <input
                   type="file"
-                  name=""
-                  id=""
-                  placeholder="Confirm your email address"
                 />
               </div>
               <div className="address">

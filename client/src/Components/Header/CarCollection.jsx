@@ -6,7 +6,6 @@ import { IoMdCloseCircle } from "react-icons/io";
 import "./Collection.css";
 import { AppContext } from "../../contexts/AppContext";
 import SearchBar from "./SearchBar/SearchBar";
-import { vehicles } from "../../Data/data";
 import FilteredVehicle from "./FilteredVehicle";
 
 const CarCollection = () => {
@@ -18,6 +17,7 @@ const CarCollection = () => {
     sortingOption,
     dispatch,
     state,
+    vehicles
   } = useContext(AppContext);
 
   const [showMobile, setShowMobile] = useState(false);
