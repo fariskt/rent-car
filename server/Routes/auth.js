@@ -28,7 +28,7 @@ passport.use(
     {
       clientID: clientid,
       clientSecret: clientsecret,
-      callbackURL: "http://localhost:8000/auth/google/callback",
+      callbackURL: "https://car4rental.vercel.app/auth/google/callback",
       scope: ["profile", "email"],
     },
     async (accessToken, refreshToken, profile, done) => {
@@ -73,8 +73,8 @@ router.get(
 router.get(
   "/auth/google/callback",
   passport.authenticate("google", {
-    successRedirect: "http://localhost:5173",
-    failureRedirect: "http://localhost:5173/login", // Update if needed
+    successRedirect: "https://car4rental.vercel.app/",
+    failureRedirect: "https://car4rental.vercel.app/login", // Update if needed
   })
 );
 
@@ -91,7 +91,7 @@ router.get("/logout", (req, res, next) => {
     if (err) {
       return next(err);
     }
-    res.redirect("http://localhost:5173");
+    res.redirect("https://car4rental.vercel.app/");
   });
 });
 
