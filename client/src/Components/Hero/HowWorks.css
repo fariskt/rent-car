@@ -11,10 +11,11 @@
 }
 .reserve-car {
   background-color: #fff;
-  margin: 50px auto;
+  margin: 0px auto;
   padding: 3.5rem 2rem;
   width: 700px;
   height: 420px;
+  margin-bottom: 50px;
 }
 
 .reserve-car .material-symbols-outlined {

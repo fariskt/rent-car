@@ -1,12 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import "./RenterForm.css";
 import PersonalDetails from "./PersonalDetails";
 import VehicleDetails from "./VehicleDetails";
-import { AppContext } from "../../contexts/AppContext";
-import Signup from "../auth/SignupPage/Signup";
+
 
 const Renter = () => {
-  const { isLoggedIn } = useContext(AppContext);
   const [selectedPickupDate, setSelectedPickupDate] = useState("");
   const [selectedReturnDate, setSelectedReturnDate] = useState("");
   const [formData, setFormData] = useState({
@@ -100,8 +98,7 @@ const Renter = () => {
   };
 
   return (
-    <>
-      {isLoggedIn ? (
+    
         <>
           <h1 style={{ paddingTop: "90px", textAlign: "center" }}>
             Rent Your Car
@@ -126,10 +123,6 @@ const Renter = () => {
             </form>
           </div>
         </>
-      ) : (
-        <Signup />
-      )}
-    </>
   );
 };
 

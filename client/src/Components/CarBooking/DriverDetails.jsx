@@ -13,7 +13,7 @@ const DriverDetails = () => {
               </div>
               <div className="phone-no-age">
                 <h4>Phone Number</h4>
-                <input type="number" placeholder="Enter your phone number" />
+                <input type="text" pattern="\d*" maxlength="10" placeholder="Enter mobile number"/>
               </div>
               <div className="age">
                 <h4>Age</h4>

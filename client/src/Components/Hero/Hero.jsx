@@ -5,10 +5,10 @@ import { SlLocationPin } from "react-icons/sl";
 import { MdOutlineDateRange } from "react-icons/md";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Featured from "../Featured/Featured";
 import HowItWorks from "./HowItWorks";
 import { AppContext } from "../../contexts/AppContext";
 import Footer from "../Footer/Footer";
+import OurService from "../Featured/OurService";
 
 const Hero = () => {
   const { location, pickupDate, returnDate, dispatch, setDuration, vehicles } =
@@ -214,7 +214,7 @@ const Hero = () => {
 
         <HowItWorks />
       </div>
-      <Featured />
+      <OurService/>
       <Footer />
     </>
   );
