@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AppContext } from "../../../contexts/AppContext";
 
 const Login = () => {
-  const {dispatch} = useContext(AppContext)
+  const { dispatch } = useContext(AppContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -14,12 +14,16 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:3001/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://rent-car-api.vercel.app/login",
+        {
+          email,
+          password,
+        }
+      );
       const { token, user, message } = response.data;
       sessionStorage.setItem("token", token);
+      dispatch({ type: "SET_IS_LOGGED", payload: true });
       if (message === "Login successful") {
         navigate("/");
       }
@@ -34,7 +38,10 @@ const Login = () => {
 
   const loginwithgoogle = () => {
     dispatch({ type: "SET_IS_LOGGED", payload: true });
-    window.open("http://localhost:3001/auth/google/callback", "_self");
+    window.open(
+      "https://rent-car-api.vercel.app/auth/google/callback",
+      "_self"
+    );
   };
 
   return (

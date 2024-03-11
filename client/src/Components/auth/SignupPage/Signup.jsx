@@ -13,21 +13,26 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     try {
       axios
-        .post("http://localhost:3001/register", { name, email, password })
+        .post("https://rent-car-api.vercel.app/register", {
+          name,
+          email,
+          password,
+        })
         .then((result) => console.log(result));
-        dispatch({ type: "SET_IS_LOGGED", payload: true });
-
+      dispatch({ type: "SET_IS_LOGGED", payload: true });
     } catch (error) {
       console.log(error);
     }
   };
+
   const loginwithgoogle = () => {
     dispatch({ type: "SET_IS_LOGGED", payload: true });
-
-    window.open("http://localhost:3001/auth/google/callback", "_self");
+    window.open(
+      "https://rent-car-api.vercel.app/auth/google/callback",
+      "_self"
+    );
   };
 
   return (
@@ -35,7 +40,7 @@ const Signup = () => {
       <div className="signup-form-container">
         <form
           className="signup-form"
-          action="http://localhost:3001/register"
+          action="https://rent-car-api.vercel.app/register"
           method="post"
           onSubmit={handleSubmit}
         >
