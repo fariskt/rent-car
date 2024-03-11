@@ -46,7 +46,7 @@ const FilteredVehicle = () => {
               <p>
                 <MdAirlineSeatReclineExtra />
                 &nbsp;
-                {item.seating_capacity} Seater
+                {item.seat_capacity} Seater
               </p>
             </div>
           </div>

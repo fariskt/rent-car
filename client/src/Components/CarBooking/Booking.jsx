@@ -32,7 +32,7 @@ const Booking = () => {
             <div className="vehicle-info">
               <div className="vehicle-option">
                 <IoMdPerson />
-                <h5>{bookedVehicle.seating_capacity}</h5>
+                <h5>{bookedVehicle.seat_capacity}</h5>
                 <FaBagShopping />
                 <h5>2</h5>
                 <LuFan />
