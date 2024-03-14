@@ -1,5 +1,7 @@
 import React from "react";
 import DatePicker from "react-datepicker";
+import { MdDelete } from "react-icons/md";
+
 
 const VehicleDetails = ({
   formData,
@@ -8,8 +10,8 @@ const VehicleDetails = ({
   selectedPickupDate,
   selectedReturnDate,
   handleDatePickUpChange,
-  handleDateReturnDateChange
-  
+  handleDateReturnDateChange,
+  handleDeleteImage,
 }) => {
   const currentDate = new Date().toISOString().split("T")[0];
 
@@ -199,7 +201,13 @@ const VehicleDetails = ({
             onChange={handleChange}
           />
         </div>
-        {imageSrc && <img src={imageSrc} />}
+
+        {imageSrc && (
+          <div>
+            <p onClick={handleDeleteImage} className="delete-img" title="delete image"><MdDelete/></p>
+            <img className="upload-img" src={imageSrc} />
+          </div>
+        )}
         <div className="legal-history">
           <h4>Legal History</h4>
           <select>

@@ -3,7 +3,6 @@ import "./RenterForm.css";
 import PersonalDetails from "./PersonalDetails";
 import VehicleDetails from "./VehicleDetails";
 
-
 const Renter = () => {
   const [selectedPickupDate, setSelectedPickupDate] = useState("");
   const [selectedReturnDate, setSelectedReturnDate] = useState("");
@@ -26,10 +25,9 @@ const Renter = () => {
 
   const formDataToSend = new FormData();
   Object.entries(formData).forEach(([key, value]) => {
-    console.log(value); 
+    console.log(value);
     formDataToSend.append(key, value);
   });
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,10 +37,13 @@ const Renter = () => {
       Object.entries(formData).forEach(([key, value]) => {
         formDataToSend.append(key, value);
       });
-      const response = await fetch("https://rent-car-api.vercel.app/api/renter-vehicle", {
-        method: "POST",
-        body: formDataToSend,
-      });
+      const response = await fetch(
+        "https://rent-car-api.vercel.app/api/renter-vehicle",
+        {
+          method: "POST",
+          body: formDataToSend,
+        }
+      );
       if (response.ok) {
         setFormData({
           car_name: "",
@@ -88,41 +89,49 @@ const Renter = () => {
 
   const handleDatePickUpChange = (name, value) => {
     setSelectedPickupDate(value);
-    const stringValue = value.toLocaleDateString()
+    const stringValue = value.toLocaleDateString();
     setFormData((prevData) => ({ ...prevData, [name]: stringValue }));
   };
   const handleDateReturnDateChange = (name, value) => {
     setSelectedReturnDate(value);
-    const stringValue = value.toLocaleDateString()
+    const stringValue = value.toLocaleDateString();
     setFormData((prevData) => ({ ...prevData, [name]: stringValue }));
   };
 
+  const handleDeleteImage = () => {
+    setFormData((prevData) => ({
+      ...prevData,
+      img: "",
+    }));
+    setImageSrc(null);
+  };
+
   return (
-    
-        <>
-          <h1 style={{ paddingTop: "90px", textAlign: "center" }}>
-            Rent Your Car
-          </h1>
-          <div className="renter-form-container">
-            <form onSubmit={handleSubmit} encType="multipart/form-data">
-              <VehicleDetails
-                formData={formData}
-                handleChange={handleChange}
-                handleDatePickUpChange={handleDatePickUpChange}
-                handleDateReturnDateChange={handleDateReturnDateChange}
-                imageSrc={imageSrc}
-                selectedPickupDate={selectedPickupDate}
-                selectedReturnDate={selectedReturnDate}
-              />
-              <PersonalDetails />
-              <div className="renter-btn">
-                <button type="submit" className="renter-form-btn">
-                  Rent Now
-                </button>
-              </div>
-            </form>
+    <>
+      <h1 style={{ paddingTop: "90px", textAlign: "center" }}>Rent Your Car</h1>
+      <div className="renter-form-container">
+        <form onSubmit={handleSubmit} encType="multipart/form-data">
+          <VehicleDetails
+            formData={formData}
+            setFormData={setFormData}
+            setImageSrc={setImageSrc}
+            handleChange={handleChange}
+            handleDatePickUpChange={handleDatePickUpChange}
+            handleDateReturnDateChange={handleDateReturnDateChange}
+            imageSrc={imageSrc}
+            selectedPickupDate={selectedPickupDate}
+            selectedReturnDate={selectedReturnDate}
+            handleDeleteImage={handleDeleteImage}
+          />
+          <PersonalDetails />
+          <div className="renter-btn">
+            <button type="submit" className="renter-form-btn">
+              Rent Now
+            </button>
           </div>
-        </>
+        </form>
+      </div>
+    </>
   );
 };
 

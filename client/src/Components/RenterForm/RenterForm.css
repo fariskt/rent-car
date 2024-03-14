@@ -176,7 +176,20 @@ form select {
   height: 45px !important;
   padding-top: 10px;
 }
+.upload-img{
+  height: 200px;
+  border: 1px solid black;
+  object-fit: contain;
+}
+.delete-img{
+  position: absolute;
+  margin-top: -5px;
+  margin-left: 440px;
+  font-size: 1.5rem;
+  color: orangered;
+  cursor: pointer;
 
+}
 @media (max-width: 768px) {
   .renter-form-container {
     max-width: 95%;
@@ -320,5 +333,21 @@ form select {
   }
   .city-zipcode .zip-inp {
     width: 100% !important;
+  }
+  .upload-img{
+    height: 200px;
+    width: 90%;
+    border: 1px solid black;
+    object-fit: contain;
+  }
+  .delete-img{
+    position: absolute;
+    margin-top: -5px;
+    margin-left: 0;
+    right: 30px;
+    font-size: 1.5rem;
+    color: orangered;
+    cursor: pointer;
+  
   }
 }
