@@ -49,7 +49,7 @@ const VehicleDetails = ({
             onChange={handleChange}
           >
             <option value="">Select Brand</option>
-            <option value="toyota">Toyoto</option>
+            <option value="toyota">Toyota</option>
             <option value="honda">Honda</option>
             <option value="mahindra">Mahindra</option>
             <option value="hyundai">Hyundai</option>

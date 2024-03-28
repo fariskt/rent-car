@@ -59,40 +59,9 @@ const Hero = () => {
     setDuration(`${days} days`);
   };
 
-  useEffect(() => {
-    const handleClick = (e) => {
-      e.preventDefault();
-      const searchElement = document.getElementById("search");
-      if (searchElement) {
-        searchElement.scrollIntoView({ behavior: "smooth" });
-      }
-    };
-    const anchor = document.querySelector('a[href="#search"]');
-    anchor.addEventListener("click", handleClick);
-
-    return () => anchor.removeEventListener("click", handleClick);
-  }, []);
 
   return (
     <>
-      <div className="welcome-container" id="home">
-        <h1>Welcome to Our Website!</h1>
-        <h3>
-          Welcome to our car rental hub! Discover smooth travels with our
-          premium vehicles. Whether you need a ride for your adventures or want
-          to share your own, we've got you covered. Explore our diverse fleet,
-          find your perfect match, and start your journey today with
-          <strong> CarRent</strong>
-        </h3>
-        <a href="#search">
-          <button className="button button-primary">Rent a Car</button>
-        </a>
-        <Link to="/renter">
-          <button className="button button-secondary">
-            List Your Car to rent
-          </button>
-        </Link>
-      </div>
       <div>
         <div className="container" id="search">
           <div className="container-heading">

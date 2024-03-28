@@ -9,9 +9,14 @@
   height: 400px;
 }
 .service-title h3 {
-  color: grey;
-  font-weight: 700;
-  margin-bottom: 20px;
+  background-color: rgba(146, 198, 233, 0.5);
+    padding: 0.8rem;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 8px;
+    color: rgb(51, 123, 206);
+    width: fit-content;
+    margin-bottom: 15px;
 }
 .service-details .service-title h1 {
   max-width: 400px;
@@ -27,7 +32,7 @@
   font-size: 1.7rem;
   width: 40px;
   text-align: center;
-  padding-top: 3px;
+  padding-top: 5px;
   height: 40px;
   background-color: rgb(229, 229, 229);
   border-radius: 8px;
@@ -63,9 +68,15 @@
     height: auto;
   }
   .service-title h3 {
-    color: grey;
-    font-weight: 700;
-    margin-bottom: 20px;
+    background-color: rgba(146, 198, 233, 0.5);
+    padding: 0.8rem;
+    font-size: 17px;
+    font-weight: 600;
+    margin: auto;
+    border-radius: 8px;
+    color: rgb(51, 123, 206);
+    width: fit-content;
     text-align: center;
+    margin-bottom: 15px;
   }
 }

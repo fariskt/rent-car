@@ -18,7 +18,7 @@ export const typeCars = [
 export const filters = {
   price: ["Low to High","High to Low"],
   segment: ["sedan", "suv/muv", "hatchback"],
-  brand: ["toyota", "maruti", "hyundai", "mahindra", "honda"],
+  car_brand: ["toyota", "maruti", "hyundai", "mahindra", "honda"],
   fuel: ["petrol", "diesel"],
   seating_capacity: ["5", "7"],
   transmission: ["auto", "manuel"],
