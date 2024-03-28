@@ -119,6 +119,7 @@
 }
 .nav-login a{
   color: white;
+  text-decoration: none;
 }
 .nav-login:hover{
   scale: 1.02;

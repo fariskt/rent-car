@@ -10,13 +10,13 @@
 }
 .service-title h3 {
   background-color: rgba(146, 198, 233, 0.5);
-    padding: 0.8rem;
-    font-size: 17px;
-    font-weight: 600;
-    border-radius: 8px;
-    color: rgb(51, 123, 206);
-    width: fit-content;
-    margin-bottom: 15px;
+  padding: 0.8rem;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 8px;
+  color: rgb(51, 123, 206);
+  width: fit-content;
+  margin-bottom: 15px;
 }
 .service-details .service-title h1 {
   max-width: 400px;
@@ -28,7 +28,7 @@
   margin: 20px 0;
 }
 .lists span {
-  color: rgb(240, 122, 12);
+  color: rgb(20, 117, 227);
   font-size: 1.7rem;
   width: 40px;
   text-align: center;

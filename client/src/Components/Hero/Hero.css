@@ -148,33 +148,6 @@ input::placeholder {
 }
 
 @media (max-width: 768px) {
-  .welcome-container {
-    color: #333;
-    margin: auto;
-    background: #f9f9f9
-      url("https://t4.ftcdn.net/jpg/02/52/46/25/360_F_252462576_koy7njo9iYx6gUcM26IZcDUs9fMKIKJs.jpg")
-      none;
-    background-size: 100%;
-    text-align: center;
-    height: 600px;
-    padding: 140px 0;
-  }
-  .welcome-container h1 {
-    font-size: 1.8rem;
-    margin: auto;
-    max-width: 357px;
-  }
-  .welcome-container h3 {
-    font-size: 1.2rem;
-    padding: 0 10px;
-  }
-  .welcome-container a {
-    display: inline-block;
-    width: fit-content;
-  }
-  .button {
-    padding: 15px;
-  }
   .form-container {
     margin: 0;
   }
@@ -183,6 +156,7 @@ input::placeholder {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin-top: 100px;
     z-index: -1;
   }
   .container-heading {
