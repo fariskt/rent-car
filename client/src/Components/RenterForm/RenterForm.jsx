@@ -123,7 +123,7 @@ const Renter = () => {
             selectedReturnDate={selectedReturnDate}
             handleDeleteImage={handleDeleteImage}
           />
-          <PersonalDetails />
+          {/* <PersonalDetails /> */}
           <div className="renter-btn">
             <button type="submit" className="renter-form-btn">
               Rent Now
