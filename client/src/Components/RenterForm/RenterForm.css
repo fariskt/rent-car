@@ -190,6 +190,7 @@ form select {
   cursor: pointer;
 
 }
+
 @media (max-width: 768px) {
   .renter-form-container {
     max-width: 95%;

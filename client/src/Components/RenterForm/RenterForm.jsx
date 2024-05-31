@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import "./RenterForm.css";
 import PersonalDetails from "./PersonalDetails";
+
 import VehicleDetails from "./VehicleDetails";
 
 const Renter = () => {
+  const [showAlert, setShowAlert] = useState(false);
+  const [showLoading, setShowLoading] = useState(false);
   const [selectedPickupDate, setSelectedPickupDate] = useState("");
   const [selectedReturnDate, setSelectedReturnDate] = useState("");
   const [formData, setFormData] = useState({
@@ -25,7 +28,6 @@ const Renter = () => {
 
   const formDataToSend = new FormData();
   Object.entries(formData).forEach(([key, value]) => {
-    console.log(value);
     formDataToSend.append(key, value);
   });
 
@@ -33,6 +35,7 @@ const Renter = () => {
     e.preventDefault();
 
     try {
+      setShowLoading(true)
       const formDataToSend = new FormData();
       Object.entries(formData).forEach(([key, value]) => {
         formDataToSend.append(key, value);
@@ -45,6 +48,7 @@ const Renter = () => {
         }
       );
       if (response.ok) {
+    
         setFormData({
           car_name: "",
           car_brand: "",
@@ -59,12 +63,18 @@ const Renter = () => {
           fuel: "",
           img: "",
         });
-
+        setShowLoading(false)
+        setShowAlert(true);
+        setTimeout(() => {
+          setShowAlert(false);
+        }, 4000);
         console.log("Vehicle data uploaded successfully");
       } else {
+        setShowLoading(false)
         console.error("Failed to upload Vehicle data");
       }
     } catch (error) {
+      setShowLoading(false)
       console.error("Error uploading Vehicle data:", error);
     }
   };
@@ -126,9 +136,25 @@ const Renter = () => {
           {/* <PersonalDetails /> */}
           <div className="renter-btn">
             <button type="submit" className="renter-form-btn">
-              Rent Now
+              {showLoading ? (
+                <p className="loading-animation" style={{color: "#ffff"}}>Uploading...</p>
+              ) : (
+                "Rent Now"
+              )}
             </button>
           </div>
+          {showAlert && (
+            <p
+              style={{
+                color: "green",
+                fontSize: "20px",
+                textAlign: "center",
+                padding: "1rem",
+              }}
+            >
+              Vehicle data uploaded successfully
+            </p>
+          )}
         </form>
       </div>
     </>
